@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Props exercise ☕️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app was created with <code>create-react-app</code>, so, the only thing left to do before you start coding is:
 
-## Available Scripts
+```bash
+npm install
+npm start
+```
 
-In the project directory, you can run:
+## Goals 🎯
 
-### `npm start`
+On <code>App.js</code> you are given an array of clients:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```js
+const clients = [
+    {
+      name: 'Mr.Hoffmann',
+      age: 52,
+      isPremium: false,
+      country: 'de',
+    },
+    {
+      name: 'Ms. Smith',
+      age: 23,
+      isPremium: true,
+      country: 'en',
+    },
+    {
+      name: 'Amélie',
+      age: 25,
+      isPremium: true,
+      country: 'fr',
+    },
+    {
+      name: 'Paco paquito...',
+      age: 67,
+      isPremium: true,
+      country: 'es',
+    },
+  ]
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The goal of this exercise is to create a **reusable card** (just one component), that we will import on <code>App.js</code> and we will use to print each of these clients, and the card will change according to the information passed by props. The final result should look like this:
 
-### `npm test`
+![](final.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Each <code>Card</code> should print:
+- The name of the client passed as childrem
+- The age of the client passed by props
+- It should answer "yes" or "no" to the question "Is it a premium client?" with he information passed by props
+- The greeting (the "Hello" part) should be different according to the country of the client
+- If the user is premium, the background color should be different.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> 💡 Note: you already have a couple of styles on <code>App.css</code> ready to be used.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+***When you are finished***, you should be able to import the Card four times on <code>App.js</code>, and pass to each card one client, like this:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```js
+  return (
+    <div className="App">
+      <h1>Hotel webpage</h1>
+      <section className="cards">
+        <Card client={clients[0]}>{clients[0].name}</Card>
+        <Card client={clients[1]}>{clients[1].name}</Card>
+        <Card client={clients[2]}>{clients[2].name}</Card>
+        <Card client={clients[3]}>{clients[3].name}</Card>
+      </section>
+    </div>
+  );
+}
+```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
