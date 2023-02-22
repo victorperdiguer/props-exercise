@@ -54,7 +54,7 @@ Take a look and notice the differences of the cards 👀. Each <code>Card</code>
 
 
 
-***When you are finished with your component Card***, you should be able to import it four times on <code>App.js</code>, and pass to each card one client, like this:
+***When you are finished with your component Card***, you should be able to import it and use it 4 times on <code>App.js</code>, and pass to each card one client, like this:
 
 ```js
   return (
@@ -81,9 +81,9 @@ Take a look and notice the differences of the cards 👀. Each <code>Card</code>
   2. Then, use the props and make sure you know how to use them and print them on the card. For instance, try to print the name or the age of the client.
   3. Then, implement the logic of the component.
 
-- When working with React, throughout the whole module, have the **browser's console** opened at all times, because it will give you very detailed information of the warnings and errors and it will help you along the process
+> ⚠️ When working with React, throughout the whole module, have the **browser's console** opened at all times, because it will give you very detailed information of the warnings and errors and it will help you along the process 
 
-> 🐆 mode: ON!! Dale!!
+💪🏼 _You can do this!_
 
 
 
